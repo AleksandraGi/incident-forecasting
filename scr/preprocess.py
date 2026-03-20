@@ -107,12 +107,12 @@ def prepare_dataset(
     return df, X, y
     
     
-if __name__ == "__main__":
-    df, X, y = prepare_dataset()
+# if __name__ == "__main__":
+#     df, X, y = prepare_dataset()
 
 
-print(df.head())
-print("\nX shape:", X.shape)
-print("y shape:", y.shape)
-print("\nFirst input window:", X[0])
-print("First label:", y[0])
+    print(df.head())
+    print("\nX shape:", X.shape)
+    print("y shape:", y.shape)
+    print("\nFirst input window:", X[0])
+    print("First label:", y[0])
