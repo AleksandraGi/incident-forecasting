@@ -90,8 +90,9 @@ def prepare_dataset(
     anomaly_windows = labels[series_key]
     anomaly_windows = [ (pd.to_datetime(start), pd.to_datetime(end)) for start, end in anomaly_windows ]
 
-    # name every timestamp and check if is in incidents (creates table:     timestamp   value   incident)  
-    #                                                                       ...         71.0    0
+    # name every timestamp and check if is in incidents 
+    # (creates table:       timestamp   value   incident)  
+    #                       ...         71.0    0
     df["incident"] = df["timestamp"].apply(lambda timestamp: is_in_incident(timestamp, anomaly_windows))
 
     values = df["value"].values
@@ -106,13 +107,9 @@ def prepare_dataset(
 
     return df, X, y
     
-    
-# if __name__ == "__main__":
-#     df, X, y = prepare_dataset()
 
-
-    print(df.head())
-    print("\nX shape:", X.shape)
-    print("y shape:", y.shape)
-    print("\nFirst input window:", X[0])
-    print("First label:", y[0])
+    # print(df.head())
+    # print("\nX shape:", X.shape)
+    # print("y shape:", y.shape)
+    # print("\nFirst input window:", X[0])
+    # print("First label:", y[0])
