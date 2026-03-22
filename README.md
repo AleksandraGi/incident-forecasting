@@ -1,28 +1,3 @@
-# incident-forecasting
-
-I use the NAB dataset file realKnownCause/machine_temperature_system_failure.csv. Each training sample is built with a sliding window: the input contains the previous W temperature values, and the label is 1 if an incident occurs within the next H time steps.
-
-data source: 
-https://github.com/numenta/NAB
-csv_path: https://github.com/numenta/NAB/blob/master/data/realKnownCause/machine_temperature_system_failure.csv
-labels_path: https://github.com/numenta/NAB/blob/master/labels/combined_windows.json
-series_key: https://github.com/numenta/NAB/tree/master/data/realKnownCause
-
-
-I evaluated the model across multiple alert thresholds. As expected, lower thresholds increased recall but also produced more false alarms, while higher thresholds improved alert precision at the cost of missing more incidents. In this experiment, a threshold of 0.3 provided the best balance, achieving precision 0.927, recall 0.977, and F1-score 0.952.
-
-The confusion matrix helps interpret the alerting behavior more directly. At a threshold of 0.5, the model generated no false positives, which means every alert was correct, but it missed some real incidents. At a threshold of 0.3, the model detected more incidents, at the cost of introducing a small number of false alarms.
-
-The confusion matrices make the threshold trade-off very clear.
-With a threshold of 0.3, the model detected 559 incidents and missed only 13, but produced 44 false positives.
-With a threshold of 0.5, the model produced no false positives at all, but missed 64 real incidents and detected 508.
-This shows the classic alerting trade-off: a lower threshold improves sensitivity, while a higher threshold improves alert precision.
-
-
-
-
-NA CZYSTO
-
 # Incident Forecasting from Time-Series Metrics
 ## Project Overview
 
