@@ -13,13 +13,13 @@ The goal is not to detect whether the current point is anomalous, but to **forec
 
 ## Dataset
 
-This project uses a public dataset from the **Numenta Anomaly Benchmark (NAB)**:
-- file: `realKnownCause/machine_temperature_system_failure.csv`
+This project uses a public dataset from the **Numenta Anomaly Benchmark (NAB)** (https://github.com/numenta/NAB):
+- file: `realKnownCause/machine_temperature_system_failure.csv` (https://github.com/numenta/NAB/blob/master/data/realKnownCause/machine_temperature_system_failure.csv)
 
 This time series represents the temperature of an internal component of a large industrial machine. The dataset also includes labeled anomalous intervals, which are treated here as incident periods.
 
 Labels were taken from:
-- `labels/combined_windows.json`
+- `labels/combined_windows.json` (https://github.com/numenta/NAB/blob/master/labels/combined_windows.json)
 
 In this project:
 - `incident = 1` means that the timestamp belongs to one of the labeled anomaly windows,
